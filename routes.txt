@@ -1,0 +1,23 @@
+--user(/users) 
+get / --allusers
+post /signup
+post /login
+
+--places(/places)
+get /users/:uid --showallplacesofuser
+post / --addplace
+
+get /:pid
+patch /:pid
+delete /:pid
+
+try {
+   
+  } catch (err) {
+    const error = new HttpError(
+      "creating place resulted in error, try again",
+      500
+    );
+    return next(error);
+  }
+
